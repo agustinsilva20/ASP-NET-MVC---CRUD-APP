@@ -1,0 +1,43 @@
+﻿@model SistemaWebVuelos.Models.Vuelo
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<div>
+    <h2>Agregar vuelo</h2>
+    
+    @using (Html.BeginForm("Create", "Vuelo", FormMethod.Post))
+    {
+        <p>
+            @Html.LabelFor(model => model.Fecha):
+            @Html.EditorFor(model => model.Fecha)
+            @Html.ValidationMessageFor(model => model.Fecha)
+        </p>
+
+        <p>
+            @Html.LabelFor(model => model.Destino):
+            @Html.EditorFor(model => model.Destino)
+            @Html.ValidationMessageFor(model => model.Destino)
+        </p>
+
+        <p>
+            @Html.LabelFor(model => model.Origen):
+            @Html.EditorFor(model => model.Origen)
+            @Html.ValidationMessageFor(model => model.Origen)
+        </p>
+
+        <p>
+            @Html.LabelFor(model => model.Matricula):
+            @Html.EditorFor(model => model.Matricula)
+            @Html.ValidationMessageFor(model => model.Matricula)
+        </p>
+
+        <input type="submit" value="Create" />
+        <a href="/vuelo/index/">Regresar</a>
+    }
+
+
+</div>
+
+

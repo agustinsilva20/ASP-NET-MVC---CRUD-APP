@@ -1,0 +1,59 @@
+﻿@model IEnumerable<SistemaWebVuelos.Models.Vuelo>
+
+@{
+    ViewBag.Title = "Index";
+}
+<div class="buton"><a href="/Vuelo/Create">Agregar un vuelo</a></div>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.VueloID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fecha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Destino)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Origen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Matricula)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.VueloID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fecha)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Destino)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Origen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Matricula)
+            </td>
+
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.VueloID }) |
+                @Html.ActionLink("Details", "Detalle", new { id = item.Matricula }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.VueloID })
+            </td>
+        </tr>
+        
+    }
+
+</table>
+
+<a href="/vuelo/TraerPorDestino/londres">Buscar vuelos a londres</a>
+

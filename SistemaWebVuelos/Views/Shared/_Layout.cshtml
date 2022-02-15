@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+
+    <link href="~/Content/Site.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div id="header">
+        <h1>SISTEMA VUELOS</h1>
+    </div>
+    <div id="menu">
+        <a href="/vuelo/home">Home</a>
+        <a href="/vuelo/index">Vuelos</a>
+    </div>
+    <div class="contenedor">
+        <div id="sideBar">
+            @if (IsSectionDefined("SideBar"))
+            {
+                @RenderSection("SideBar")
+            }
+            else
+            {
+                <h3> Prueba de Zona SideBar</h3>
+            }
+
+        </div>
+        <div id="content">
+            @RenderBody()
+        </div>
+
+    </div>
+    
+    <div id="footer">
+        <h3>Info@vuelos.com</h3>
+    </div>
+
+
+</body>
+</html>

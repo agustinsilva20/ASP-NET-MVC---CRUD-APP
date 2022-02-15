@@ -1,0 +1,60 @@
+﻿@model SistemaWebVuelos.Models.Vuelo
+@{
+    ViewBag.Title = "DeleteConfirm";
+}
+
+
+<<h3>Estas seguro de borrar este vuelo?</h3>
+<div>
+    <h4>Vuelo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+   <div class="item">
+        <dt>
+            @Html.DisplayNameFor(model => model.VueloID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VueloID)
+        </dd>
+</div>
+<div class="item">
+    <dt>
+        @Html.DisplayNameFor(model => model.Fecha)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.Fecha)
+    </dd>
+    </div>
+<div class="item">
+    <dt>
+        @Html.DisplayNameFor(model => model.Destino)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.Destino)
+    </dd>
+    </div>
+<div class="item">
+    <dt>
+        @Html.DisplayNameFor(model => model.Origen)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.Origen)
+    </dd>
+    </div>
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Borarr" class="btn btn-default" />
+            @Html.ActionLink("Regresar", "Index")
+        </div>
+    }
